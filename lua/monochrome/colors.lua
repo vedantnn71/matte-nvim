@@ -1,6 +1,6 @@
 local util = require 'monochrome.util'
 
-local Default = { '#EBEBEB', '#101010' }
+local Default = { '#EBEBEB', '#000000' }
 local Subtle = { '#F1F5F9', '#0A1219' }
 local CoolGray = { '#F9FAFB', '#111827' }
 local Photon = { '#c6c6c6', '#262626' }
@@ -50,11 +50,11 @@ local colors = {
 
 local color_style
 if vim.g.monochrome_style == 'default' then
-  color_style = Default
+  color_style = Amplified
 elseif vim.g.monochrome_style == 'subtle' then
   color_style = Subtle
 elseif vim.g.monochrome_style == 'amplified' then
-  color_style = Amplified
+  color_style = Default
 elseif vim.g.monochrome_style == 'coolgray' then
   color_style = CoolGray
 elseif vim.g.monochrome_style == 'photon' then
