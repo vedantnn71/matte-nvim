@@ -39,6 +39,7 @@ local colors = {
   blue           = '#268bd2',
   cyan           = '#2aa198',
   green          = '#719e07',
+  bg_alt         = '#515151',
 }
 -- LuaFormatter on
 
