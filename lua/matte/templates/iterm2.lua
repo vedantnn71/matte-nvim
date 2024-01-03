@@ -1,5 +1,5 @@
 M = {}
-local hsluv = require 'monochrome.hsluv'
+local hsluv = require 'matte.hsluv'
 
 local function rgb2float(rgb)
   return { rgb[1], rgb[2], rgb[3] }

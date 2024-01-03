@@ -1,6 +1,6 @@
 local M = {}
 
-local colors = require 'monochrome.colors'
+local colors = require 'matte.colors'
 
 M.colors = colors
 
@@ -346,7 +346,7 @@ function M.colorscheme()
     vim.api.nvim_command('syntax reset')
   end
   vim.o.termguicolors = true
-  vim.g.colors_name = 'monochrome'
+  vim.g.colors_name = 'matte'
   local syntax = M.load_syntax()
   for group, tables in pairs(syntax) do
     M.highlight(group, tables)
@@ -360,8 +360,8 @@ function M.colorscheme()
 end
 
 function M.reset()
-  package.loaded['monochrome'] = nil
-  require'monochrome'.colorscheme()
+  package.loaded['matte'] = nil
+  require'matte'.colorscheme()
 end
 
 return M

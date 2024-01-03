@@ -1,10 +1,4 @@
-local util = require 'monochrome.util'
-
-local Default = { '#EBEBEB', '#000000' }
-local Subtle = { '#F1F5F9', '#0A1219' }
-local CoolGray = { '#F9FAFB', '#111827' }
-local Photon = { '#c6c6c6', '#262626' }
-local Amplified = { '#FFFFFF', '#000000' }
+local util = require 'matte.util'
 
 -- LuaFormatter off
 local colors = {
@@ -48,22 +42,7 @@ local colors = {
 }
 -- LuaFormatter on
 
-local color_style
-if vim.g.monochrome_style == 'default' then
-  color_style = Amplified
-elseif vim.g.monochrome_style == 'subtle' then
-  color_style = Subtle
-elseif vim.g.monochrome_style == 'amplified' then
-  color_style = Default
-elseif vim.g.monochrome_style == 'coolgray' then
-  color_style = CoolGray
-elseif vim.g.monochrome_style == 'photon' then
-  color_style = Photon
-elseif vim.g.monochrome_style == 'custom' then
-  color_style = vim.g.monochrome_custom_style
-else
-  color_style = Default
-end
+local color_style = { '#FFFFFF', '#000000' }
 
 local fg, bg = unpack(color_style)
 if vim.o.background == 'light' then

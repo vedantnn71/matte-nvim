@@ -1,4 +1,4 @@
-local hsluv = require 'monochrome.hsluv'
+local hsluv = require 'matte.hsluv'
 
 local M = {}
 
@@ -85,11 +85,11 @@ function M.brighten(color, percentage)
 end
 
 function M.darken(hex, amount, bg)
-  return M.blend(hex, bg or require'monochrome.colors'.black, { math.abs(amount), math.abs(amount), math.abs(amount) })
+  return M.blend(hex, bg or require'matte.colors'.black, { math.abs(amount), math.abs(amount), math.abs(amount) })
 end
 
 function M.lighten(hex, amount, fg)
-  return M.blend(hex, fg or require'monochrome.colors'.white, { math.abs(amount), math.abs(amount), math.abs(amount) })
+  return M.blend(hex, fg or require'matte.colors'.white, { math.abs(amount), math.abs(amount), math.abs(amount) })
 end
 
 local function range(from, to, step)
@@ -103,7 +103,7 @@ local function range(from, to, step)
 end
 
 function M.colorize(fg, bg)
-  -- https://github.com/anotherglitchinthematrix/monochrome/blob/master/src/base.js
+  -- https://github.com/anotherglitchinthematrix/matte/blob/master/src/base.js
   local first = hsluv.hex_to_hsluv(bg)[3]
   local last = hsluv.hex_to_hsluv(fg)[3]
   local lower, higher

@@ -1,4 +1,4 @@
-local colors = require 'monochrome.colors'
+local colors = require 'matte.colors'
 return {
   normal = {
     a = { fg = colors.black, bg = colors.neutral_green, gui = 'bold' },

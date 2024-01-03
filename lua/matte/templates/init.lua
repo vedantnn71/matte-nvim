@@ -1,5 +1,5 @@
 local M = {}
-local iterm2 = require 'monochrome.templates.iterm2'
+local iterm2 = require 'matte.templates.iterm2'
 
 local config = {}
 
@@ -28,7 +28,7 @@ end
 local CURRENT_FOLDER = debug.getinfo(1, 'S').source:sub(2):match('(.*[/\\])')
 
 function M.generate_iterm2_script(path)
-  local colors = require'monochrome'.colors
+  local colors = require'matte'.colors
   local iterm2_codes = {
     fg = colors.fg,
     bg = colors.bg,
@@ -63,7 +63,7 @@ function M.generate_iterm2_script(path)
 end
 
 function M.generate_bashenv_script(path)
-  local colors = require'monochrome'.colors
+  local colors = require'matte'.colors
   local content = ''
   for key, value in pairs(colors) do
     local s = [[export ]] .. key:upper() .. [[=]] .. value .. '\n'
@@ -73,7 +73,7 @@ function M.generate_bashenv_script(path)
 end
 
 function M.render(path)
-  config.colors = require'monochrome'.colors
+  config.colors = require'matte'.colors
   local tpl = openTemplate(CURRENT_FOLDER .. 'iterm2.tpl')
   if tpl then
     print('=> Writing file ' .. path)
